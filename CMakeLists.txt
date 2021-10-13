@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.20)
+project(LMP2)
+
+set(CMAKE_CXX_STANDARD 20)
+set(SOURCE_FILES main.cpp src/classes/Node.cpp src/classes/Node.h src/classes/LinkedList.cpp src/classes/LinkedList.h src/classes/File.cpp src/classes/File.h src/classes/Date.cpp src/classes/Date.h src/classes/Size.cpp src/classes/Size.h tests/Date_test.cpp tests/Size_test.cpp tests/File_test.cpp tests/LinkedList_test.cpp tests/Node_test.cpp)
+add_executable(LMP2 ${SOURCE_FILES})
+add_subdirectory(lib/googletest)
+include_directories(lib/googletest/googletest/include)
+include_directories(src)
+target_link_libraries(LMP2 gtest gtest_main)
